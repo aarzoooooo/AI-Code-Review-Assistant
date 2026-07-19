@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Code Review Assistant</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+
+        <div class="hero">
+
+    <div class="hero-text">
+
+        <h1>AI Code Review Assistant</h1>
+        <p id="google">Powered by Google Gemini AI</p>
+
+        <p id="welcomeMessage">
+            Welcome! Please enter your name.
+        </p>
+
+    </div>
+
+    <div class="hero-image">
+
+        <img src="robot image\robot.jpg" alt="AI Robot" id="robot">
+
+    </div>
+
+</div>
+
+        <label for="username" id="nameLabel">Your Name</label>
+
+        <input
+            type="text"
+            id="username"
+            placeholder="Enter your name"
+        >
+
+        <button id="saveBtn">
+            Continue
+        </button>
+        
+
+        <label for="language">Programming Language</label>
+
+        <select id="language">
+
+            <option>Python</option>
+            <option>Java</option>
+            <option>C++</option>
+            <option>JavaScript</option>
+            <option>C</option>
+
+        </select>
+
+        <br><br>
+
+
+        <textarea
+            id="code"
+            rows="15"
+            placeholder="Paste your code here..."
+        ></textarea>
+
+        <br><br>
+
+        <button id="reviewBtn">
+            Review Code
+        </button>
+
+        <h2>AI Review</h2>
+
+        <div id="result">
+
+            AI feedback will appear here...
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
