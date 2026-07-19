@@ -35,7 +35,7 @@ reviewBtn.addEventListener("click", async function () {
     const language = document.getElementById("language").value;
     const code = document.getElementById("code").value;
 
-    const response = await fetch("http://192.168.0.5:8000/review", {
+    const response = await fetch("https://ai-code-review-assistant-bdl5.onrender.com/review", {
 
         method: "POST",
 
