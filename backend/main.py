@@ -51,9 +51,7 @@ def list_models():
 
 
 MODEL_FALLBACK_CHAIN = [
-    "gemini-2.5-flash",
-    "gemini-2.5-flash-lite",
-    "gemini-3.5-flash",
+    "gemini-3.6-flash",
 ]
 
 MAX_RETRIES_PER_MODEL = 2
