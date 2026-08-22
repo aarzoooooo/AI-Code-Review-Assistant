@@ -16,8 +16,7 @@ reviewBtn.addEventListener("click", async function () {
     result.innerHTML = "Reviewing your code...";
 
     try {
-        const response = await fetch(
-            "https://ai-code-review-assistant-bdl5.onrender.com/review",
+        const response = await fetch("https://ai-code-review-assistant-1-7ctp.onrender.com/review", 
             {
                 method: "POST",
 
