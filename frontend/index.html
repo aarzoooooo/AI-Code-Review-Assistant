@@ -6,44 +6,43 @@
     <title>AI Code Review Assistant</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+
     <div class="container">
 
         <div class="hero">
 
-    <div class="hero-text">
+            <div class="hero-text">
 
-        <h1>AI Code Review Assistant</h1>
-        <p id="google">Powered by Google Gemini AI</p>
+                <h1>AI Code Review Assistant</h1>
 
-        <p id="welcomeMessage">
-            Welcome! Please enter your name.
-        </p>
+                <p id="google">
+                    Powered by Google Gemini AI
+                </p>
 
-    </div>
+                <p id="welcomeMessage">
+                    Welcome! Paste your code below for an AI-powered review.
+                </p>
 
-    <div class="hero-image">
+            </div>
 
-        <img src="robot image\robot.jpg" alt="AI Robot" id="robot">
+            <div class="hero-image">
 
-    </div>
+                <img
+                    src="robot image\robot.jpg"
+                    alt="AI Robot"
+                    id="robot"
+                >
 
-</div>
+            </div>
 
-        <label for="username" id="nameLabel">Your Name</label>
+        </div>
 
-        <input
-            type="text"
-            id="username"
-            placeholder="Enter your name"
-        >
 
-        <button id="saveBtn">
-            Continue
-        </button>
-        
-
-        <label for="language">Programming Language</label>
+        <label for="language">
+            Programming Language
+        </label>
 
         <select id="language">
 
@@ -55,6 +54,7 @@
 
         </select>
 
+
         <br><br>
 
 
@@ -64,22 +64,28 @@
             placeholder="Paste your code here..."
         ></textarea>
 
+
         <br><br>
+
 
         <button id="reviewBtn">
             Review Code
         </button>
 
-        <h2>AI Review</h2>
+
+        <h2>
+            AI Review
+        </h2>
+
 
         <div id="result">
-
             AI feedback will appear here...
-
         </div>
 
     </div>
 
+
     <script src="script.js"></script>
+
 </body>
 </html>

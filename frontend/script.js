@@ -1,57 +1,51 @@
-const saveBtn = document.getElementById("saveBtn");
-
-saveBtn.addEventListener("click", function () {
-
-    const name = document.getElementById("username").value;
-
-    if(name === ""){
-        alert("Please enter your name.");
-        return;
-    }
-
-    localStorage.setItem("username", name);
-
-    document.getElementById("welcomeMessage").innerHTML =
-    `Welcome, ${name}:) Please paste your code below.`;
-    document.getElementById("nameLabel").style.display = "none";
-    document.getElementById("username").style.display = "none";
-    document.getElementById("saveBtn").style.display = "none";
-    document.querySelector(".hero").style.marginBottom = "10px";
-
-});
-const username = document.getElementById("username");
-
-username.addEventListener("keypress", function(event){
-
-    if(event.key === "Enter"){
-        document.getElementById("saveBtn").click();
-    }
-
-});
 const reviewBtn = document.getElementById("reviewBtn");
 
 reviewBtn.addEventListener("click", async function () {
 
     const language = document.getElementById("language").value;
     const code = document.getElementById("code").value;
+    const result = document.getElementById("result");
 
-    const response = await fetch("https://ai-code-review-assistant-bdl5.onrender.com/review", {
+    // Check if code was entered
+    if (code.trim() === "") {
+        result.innerHTML = "Please enter some code to review.";
+        return;
+    }
 
-        method: "POST",
+    // Show loading message
+    result.innerHTML = "Reviewing your code...";
 
-        headers: {
-            "Content-Type": "application/json"
-        },
+    try {
+        const response = await fetch(
+            "https://ai-code-review-assistant-bdl5.onrender.com/review",
+            {
+                method: "POST",
 
-        body: JSON.stringify({
-            language: language,
-            code: code
-        })
+                headers: {
+                    "Content-Type": "application/json"
+                },
 
-    });
+                body: JSON.stringify({
+                    language: language,
+                    code: code
+                })
+            }
+        );
 
-    const data = await response.json();
+        const data = await response.json();
 
-    document.getElementById("result").innerHTML = data.review;
+        // Handle backend errors
+        if (data.error) {
+            result.innerHTML = "Error: " + data.error;
+            return;
+        }
 
+        // Display AI review
+        result.innerHTML = data.review;
+
+    } catch (error) {
+        result.innerHTML =
+            "Unable to connect to the backend. Please try again.";
+        console.error(error);
+    }
 });
